@@ -1,0 +1,24 @@
+{
+  "originHash" : "b1024f9bece55a3b305647c9bb9d64e34b5ddfbb1a2b8c50c7f9472f2f8f4355",
+  "pins" : [
+    {
+      "identity" : "base32",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Jarema/Base32.git",
+      "state" : {
+        "revision" : "7f723a2e55f1c76e7c79263aebf89dbfcd58e77d",
+        "version" : "0.10.2"
+      }
+    },
+    {
+      "identity" : "oauthenticator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/germ-network/OAuthenticator",
+      "state" : {
+        "branch" : "mark/build-runtime",
+        "revision" : "9c48ddf76b9d42a143be55594113f18e522ffdb1"
+      }
+    }
+  ],
+  "version" : 3
+}

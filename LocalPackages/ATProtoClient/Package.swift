@@ -4,44 +4,36 @@
 import PackageDescription
 
 let package = Package(
-	name: "ATProtoOAuth",
-	platforms: [.macOS(.v15)],
+	name: "ATProtoClient",
+	platforms: [.macOS(.v13)],
 	products: [
 		// Products define the executables and libraries a package produces, making them visible to other packages.
 		.library(
-			name: "ATProtoOAuth",
-			targets: ["ATProtoOAuth"]
+			name: "ATProtoClient",
+			targets: ["ATProtoClient"]
 		)
 	],
 	dependencies: [
-		.package(path: "./LocalPackages/ATProtoClient"),
-		.package(path: "./LocalPackages/ATProtoTypes"),
+		.package(path: "../ATProtoTypes"),
+		//for temp shim only
 		.package(
 			url: "https://github.com/germ-network/OAuthenticator",
 			branch: "mark/build-runtime"
-		),
-		//for temp shim only
-		.package(
-			url: "https://github.com/germ-network/ATResolve",
-			exact: "1.0.0-germ.2"
 		),
 	],
 	targets: [
 		// Targets are the basic building blocks of a package, defining a module or a test suite.
 		// Targets can depend on other targets in this package and products from dependencies.
 		.target(
-			name: "ATProtoOAuth",
+			name: "ATProtoClient",
 			dependencies: [
-				"ATProtoClient",
 				"ATProtoTypes",
 				"OAuthenticator",
-				//for temp shim only
-				"ATResolve",
 			]
 		),
 		.testTarget(
-			name: "ATProtoOAuthTests",
-			dependencies: ["ATProtoOAuth"]
+			name: "ATProtoClientTests",
+			dependencies: ["ATProtoClient"]
 		),
 	]
 )
